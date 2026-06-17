@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Rooms — AzureStay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/room-view.css" />
+</head>
+<body class="room-view-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">AzureStay</a>
+      <div class="nav-actions">
+        <span class="nav-greeting" id="navGreeting"></span>
+        <a href="/" class="btn-ghost-sm" id="logoutBtn">Log out</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="room-view-header">
+    <div class="container">
+      <h1>Available Rooms</h1>
+      <p>Browse our selection and view room details.</p>
+    </div>
+  </div>
+
+  <!-- ROOMS GRID -->
+  <div class="container room-view-body">
+    <div class="rooms-grid" id="roomsGrid"></div>
+  </div>
+
+  <script src="/js/room-view.js"></script>
+</body>
+</html>

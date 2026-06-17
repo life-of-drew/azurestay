@@ -1,0 +1,117 @@
+/* =====================================================
+   AzureStay — Room View Stylesheet
+   ===================================================== */
+
+   .room-view-page {
+    background: var(--bg);
+    min-height: 100vh;
+  }
+  
+  .nav-greeting {
+    font-size: 0.875rem;
+    color: var(--ink-muted);
+  }
+  
+  /* ── Page header ───────────────────────────────────── */
+  .room-view-header {
+    background: linear-gradient(135deg, #0f2d45 0%, #2C6E91 100%);
+    padding: 5rem 0 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .room-view-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  
+  .room-view-header p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+  }
+  
+  .room-view-body {
+    padding-bottom: 4rem;
+  }
+  
+  /* ── Rooms grid ────────────────────────────────────── */
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* ── Room card ─────────────────────────────────────── */
+  .room-card-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  
+  .room-card-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+  
+  /* ── Room image colour blocks ──────────────────────── */
+  .room-card-img {
+    height: 180px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+  
+  .room-card-img--standard   { background: linear-gradient(160deg, #b8cdd6 0%, #8aaebb 100%); }
+  .room-card-img--deluxe     { background: linear-gradient(160deg, #c8d5c0 0%, #94b088 100%); }
+  .room-card-img--suite      { background: linear-gradient(160deg, #c0b4d4 0%, #8f7fb0 100%); }
+  .room-card-img--oceanfront { background: linear-gradient(160deg, #a8c8e8 0%, #5c9abf 100%); }
+  
+  /* ── Status badge ──────────────────────────────────── */
+  .status-badge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.25rem 0.7rem;
+    border-radius: 99px;
+    letter-spacing: 0.05em;
+  }
+  
+  .status-badge--available   { background: #e9f5ef; color: #1f6b43; }
+  .status-badge--occupied    { background: #fdf0ef; color: #9b2c2c; }
+  .status-badge--maintenance { background: #fef9ec; color: #92610a; }
+  
+  /* ── Card body ─────────────────────────────────────── */
+  .room-card-body {
+    padding: 1.2rem 1.4rem 1.4rem;
+  }
+  
+  .room-card-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  
+  .room-card-body p {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 1rem;
+    line-height: 1.55;
+  }
+  
+  .room-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.83rem;
+    border-top: 1px solid var(--border);
+    padding-top: 0.9rem;
+  }
+  
+  .room-card-meta span   { color: var(--ink-muted); }
+  .room-card-meta strong { color: var(--blue); font-weight: 600; }

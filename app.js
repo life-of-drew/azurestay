@@ -24,9 +24,12 @@ app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'register.html'));
 });
 
-// Login page (placeholder — built in next step)
 app.get('/login', (req, res) => {
-  res.send('<h2>Login page — coming next</h2><a href="/">Back</a>');
+  res.sendFile(path.join(__dirname, 'views', 'login.html'));
+});
+
+app.get('/room-view', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'room-view.html'));
 });
 
 // ── API Routes ─────────────────────────────────────

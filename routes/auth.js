@@ -1,6 +1,7 @@
 // =====================================================
-//  AzureStay — Registration Route
-//  routes/auth.js
+//  AzureStay — Auth Routes
+//  POST /api/register
+//  POST /api/login
 // =====================================================
 
 const express = require('express');
@@ -14,7 +15,6 @@ const SALT_ROUNDS = 10;
 router.post('/register', async (req, res) => {
   const { firstName, lastName, email, phone, password } = req.body;
 
-  // ── 1. Basic server-side validation ─────────────
   if (!firstName || !lastName || !email || !phone || !password) {
     return res.status(400).json({ message: 'All fields are required.' });
   }
@@ -28,7 +28,6 @@ router.post('/register', async (req, res) => {
   }
 
   try {
-    // ── 2. Check for duplicate email ────────────────
     const [existing] = await db.query(
       'SELECT id FROM users WHERE email = ?',
       [email.toLowerCase()]
@@ -41,28 +40,63 @@ router.post('/register', async (req, res) => {
       });
     }
 
-    // ── 3. Hash the password ─────────────────────────
     const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
 
-    // ── 4. Insert new user into the database ─────────
     await db.query(
       `INSERT INTO users (first_name, last_name, email, phone, password_hash)
        VALUES (?, ?, ?, ?, ?)`,
       [firstName, lastName, email.toLowerCase(), phone, passwordHash]
     );
 
-    // ── 5. Simulate sending a verification email ─────
-    //    In a real app, you would call an email service here
-    //    e.g. sendVerificationEmail(email, firstName)
     console.log(`[Email Simulation] Verification email sent to: ${email}`);
 
-    // ── 6. Respond with success ───────────────────────
     return res.status(201).json({
       message: `Account created successfully. A verification email has been sent to ${email}.`,
     });
 
   } catch (err) {
     console.error('Registration error:', err);
+    return res.status(500).json({ message: 'Server error. Please try again later.' });
+  }
+});
+
+// ── POST /api/login ───────────────────────────────
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Email and password are required.' });
+  }
+
+  try {
+    const [rows] = await db.query(
+      'SELECT * FROM users WHERE email = ?',
+      [email.toLowerCase()]
+    );
+
+    if (rows.length === 0) {
+      return res.status(401).json({ message: 'Invalid email or password.' });
+    }
+
+    const user = rows[0];
+    const passwordMatch = await bcrypt.compare(password, user.password_hash);
+
+    if (!passwordMatch) {
+      return res.status(401).json({ message: 'Invalid email or password.' });
+    }
+
+    return res.status(200).json({
+      message: 'Login successful.',
+      user: {
+        id:        user.id,
+        firstName: user.first_name,
+        lastName:  user.last_name,
+        email:     user.email,
+      },
+    });
+
+  } catch (err) {
+    console.error('Login error:', err);
     return res.status(500).json({ message: 'Server error. Please try again later.' });
   }
 });
