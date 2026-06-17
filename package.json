@@ -1,16 +1,18 @@
 {
-    "name": "azurestay-hotel",
-    "version": "1.0.0",
-    "description": "Hotel Reservation System",
-    "main": "app.js",
-    "scripts": {
-      "start": "node app.js",
-      "dev":   "nodemon app.js"
-    },
-    "dependencies": {
-      "express": "^4.18.2"
-    },
-    "devDependencies": {
-      "nodemon": "^3.0.1"
-    }
+  "name": "azurestay-hotel",
+  "version": "1.0.0",
+  "description": "Hotel Reservation System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev":   "nodemon app.js"
+  },
+  "dependencies": {
+    "bcrypt":   "^5.1.1",
+    "express":  "^4.18.2",
+    "mysql2":   "^3.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
+}

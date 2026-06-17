@@ -1,0 +1,267 @@
+/* =====================================================
+   AzureStay — Auth Pages Stylesheet
+   Shared by register.html and login.html
+   ===================================================== */
+
+/* ── Auth page body ────────────────────────────────── */
+.auth-page {
+    background: var(--bg);
+    min-height: 100vh;
+  }
+  
+  /* ── Two-column layout ─────────────────────────────── */
+  .auth-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding-top: 64px; /* offset fixed navbar */
+  }
+  
+  @media (max-width: 768px) {
+    .auth-layout { grid-template-columns: 1fr; }
+    .auth-panel-left { display: none; }
+  }
+  
+  /* ── Left decorative panel ─────────────────────────── */
+  .auth-panel-left {
+    background: linear-gradient(160deg, #0f2d45 0%, #1B4F6A 50%, #2C6E91 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+  }
+  
+  .auth-panel-text h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  .auth-panel-text h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .auth-panel-text p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 300px;
+  }
+  
+  /* ── Right form panel ──────────────────────────────── */
+  .auth-panel-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 2rem;
+  }
+  
+  .auth-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .auth-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  
+  .auth-subtitle {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    margin-bottom: 1.8rem;
+  }
+  
+  .auth-subtitle a {
+    color: var(--blue);
+    font-weight: 500;
+  }
+  
+  .auth-subtitle a:hover { text-decoration: underline; }
+  
+  .auth-terms {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+  
+  .auth-terms a { color: var(--blue); }
+  .auth-terms a:hover { text-decoration: underline; }
+  
+  /* ── Alert banners ─────────────────────────────────── */
+  .alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    margin-bottom: 1.4rem;
+    line-height: 1.5;
+  }
+  
+  .alert svg { flex-shrink: 0; margin-top: 1px; }
+  
+  .alert--success {
+    background: #e9f5ef;
+    color: #1f6b43;
+    border: 1px solid #b3d9c4;
+  }
+  
+  .alert--error {
+    background: #fdf0ef;
+    color: #9b2c2c;
+    border: 1px solid #f0bfbb;
+  }
+  
+  .hidden { display: none !important; }
+  
+  /* ── Form elements ─────────────────────────────────── */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    color: var(--ink);
+    background: var(--white);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  
+  input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(44, 110, 145, 0.12);
+  }
+  
+  input.input--error {
+    border-color: #e53e3e;
+  }
+  
+  input::placeholder { color: #b0b7c3; }
+  
+  /* ── Password input with show/hide toggle ──────────── */
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-wrapper input {
+    padding-right: 2.8rem;
+  }
+  
+  .toggle-pw {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transition: color var(--transition);
+  }
+  
+  .toggle-pw:hover { color: var(--blue); }
+  
+  /* ── Password strength bar ─────────────────────────── */
+  .strength-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .strength-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+  
+  .field-hint {
+    font-size: 0.76rem;
+    color: var(--ink-muted);
+    margin-top: 0.3rem;
+  }
+  
+  /* ── Field-level error messages ────────────────────── */
+  .field-error {
+    font-size: 0.76rem;
+    color: #e53e3e;
+    margin-top: 0.25rem;
+    min-height: 1rem;
+    display: block;
+  }
+  
+  /* ── Submit button full-width variant ──────────────── */
+  .btn-primary.full {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* ── Divider ───────────────────────────────────────── */
+  .auth-divider {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    margin: 1.2rem 0;
+    position: relative;
+  }
+  
+  .auth-divider::before,
+  .auth-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 38%;
+    height: 1px;
+    background: var(--border);
+  }
+  
+  .auth-divider::before { left: 0; }
+  .auth-divider::after  { right: 0; }
