@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AzureStay — Hotel Reservation System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">AzureStay</a>
+      <div class="nav-actions">
+        <a href="/login" class="btn-ghost-sm">Login</a>
+        <a href="/register" class="btn-primary-sm">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Boutique Hotel &amp; Reservations</p>
+      <h1 class="hero-title">
+        Your perfect stay<br />
+        <em>starts here.</em>
+      </h1>
+      <p class="hero-subtitle">
+        Discover handpicked rooms and seamless booking —<br />
+        all from one simple account.
+      </p>
+      <div class="hero-cta">
+        <a href="/register" class="btn-primary">Create an account</a>
+        <a href="/login" class="btn-outline">Sign in</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FEATURES SECTION
+  ═══════════════════════════════════════ -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everything you need to book your stay</h2>
+        <p>A straightforward reservation experience from start to finish.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+            </svg>
+          </div>
+          <h3>Simple Registration</h3>
+          <p>Create your account in under a minute. Just your name, email, and a password.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+            </svg>
+          </div>
+          <h3>Secure Login</h3>
+          <p>Your credentials are protected. Passwords are encrypted — never stored as plain text.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" />
+            </svg>
+          </div>
+          <h3>Browse Rooms</h3>
+          <p>View available rooms with details on type, capacity, and nightly rates.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ROOM HIGHLIGHTS SECTION
+  ═══════════════════════════════════════ -->
+  <section class="rooms">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our room types</h2>
+        <p>From cozy standard rooms to premium suites — something for every guest.</p>
+      </div>
+      <div class="rooms-grid">
+
+        <div class="room-card">
+          <div class="room-img room-img--standard">
+            <span class="room-badge">Standard</span>
+          </div>
+          <div class="room-body">
+            <h3>Standard Room</h3>
+            <p>Comfortable and well-appointed. Ideal for solo travelers or couples.</p>
+            <div class="room-meta">
+              <span>Up to 2 guests</span>
+              <strong>₱3,100 / night</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <div class="room-img room-img--deluxe">
+            <span class="room-badge">Deluxe</span>
+          </div>
+          <div class="room-body">
+            <h3>Deluxe Room</h3>
+            <p>Extra space, a private balcony, and a view worth waking up for.</p>
+            <div class="room-meta">
+              <span>Up to 3 guests</span>
+              <strong>₱5,200 / night</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card">
+          <div class="room-img room-img--suite">
+            <span class="room-badge">Suite</span>
+          </div>
+          <div class="room-body">
+            <h3>Oceanfront Suite</h3>
+            <p>Premium suite with panoramic sea views and a private living area.</p>
+            <div class="room-meta">
+              <span>Up to 4 guests</span>
+              <strong>₱8,500 / night</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CALL TO ACTION STRIP
+  ═══════════════════════════════════════ -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Ready to book your stay?</h2>
+      <p>Create a free account and start browsing available rooms today.</p>
+      <a href="/register" class="btn-primary">Get started</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <span class="footer-brand">AzureStay</span>
+      <span class="footer-note">Hotel Reservation System</span>
+    </div>
+  </footer>
+
+</body>
+</html>
