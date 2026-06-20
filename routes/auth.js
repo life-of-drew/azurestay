@@ -1,5 +1,5 @@
 // =====================================================
-//  AzureStay — Auth Routes
+//  FrostByte — Auth Routes
 //  POST /api/register
 //  POST /api/login
 // =====================================================

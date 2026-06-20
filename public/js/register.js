@@ -1,5 +1,5 @@
 // =====================================================
-//  AzureStay — Registration Form (Frontend)
+//  FrostByte — Registration Form (Frontend)
 //  Handles: validation, submission, UI feedback
 // =====================================================
 

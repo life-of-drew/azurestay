@@ -1,5 +1,5 @@
 // =====================================================
-//  AzureStay — Login Form (Frontend)
+//  FrostByte — Login Form (Frontend)
 // =====================================================
 
 const form        = document.getElementById('loginForm');
@@ -83,7 +83,7 @@ form.addEventListener('submit', async function (e) {
 
     if (response.ok) {
       // Save user info for dashboard greeting
-      localStorage.setItem('azurestay_user', JSON.stringify(result.user));
+      localStorage.setItem('frostbyte_user', JSON.stringify(result.user));
 
       // Show success message then redirect
       successMsg.textContent = `Welcome back, ${result.user.firstName}! Redirecting to your dashboard...`;

@@ -1,5 +1,5 @@
 // =====================================================
-//  AzureStay — Express App Entry Point
+//  Frost Byte — Express App Entry Point
 //  Hotel Reservation System · Teaching Demo
 // =====================================================
 
@@ -37,5 +37,5 @@ app.use('/api', authRoutes);
 
 // ── Start Server ───────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`AzureStay running at http://localhost:${PORT}`);
+  console.log(`Frost Byte running at http://localhost:${PORT}`);
 });

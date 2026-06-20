@@ -1,4 +1,4 @@
-# AzureStay Hotel Reservation System
+# Frost Byte Hotel Reservation System
 
 A simple hotel reservation web application built with Node.js and Express.
 
